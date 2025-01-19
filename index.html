@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lending Club Loan Default Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Lending Club Loan Default Prediction</h1>
+    </header>
+
+    <main class="main-container">
+        <!-- Visualization Section -->
+        <!-- <section class="visualization">
+            <h2>Generate Visualizations</h2>
+            <div class="button-container">
+                <button onclick="generateChart('loan_distribution')">Loan Amount Distribution</button>
+                <button onclick="generateChart('loan_purpose_analysis')">Loan Purpose Analysis</button>
+                <button onclick="generateChart('feature_importance')">Feature Importance</button>
+            </div>
+        </section> -->
+
+        <!-- Prediction Form Section -->
+        <section class="prediction">
+            <h2>Predict Loan Default</h2>
+            <form id="prediction-form">
+                <div class="form-group">
+                    <label for="loan_amnt">Funded Amount:</label>
+                    <input type="number" id="loan_amnt" name="loan_amnt" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loan_term">Loan Term (36 or 60):</label>
+                    <input type="number" id="loan_term" name="loan_term" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="int_rate">Interest Rate (%):</label>
+                    <input type="number" step="0.01" id="int_rate" name="int_rate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="annual_inc">Annual Income ($):</label>
+                    <input type="number" id="annual_inc" name="annual_inc" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dti">Debt-to-Income Ratio (%):</label>
+                    <input type="number" step="0.01" id="dti" name="dti" required>
+                </div>
+
+                <button type="button" onclick="predictDefault()">Predict</button>
+            </form>
+
+            <div id="prediction-result"></div>
+        </section>
+
+        <!-- Chart Display Section -->
+        <section id="chart-container" class="chart-container"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
